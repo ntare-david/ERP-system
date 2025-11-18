@@ -3,11 +3,7 @@ import { DataTable } from '../../components/DataTable'
 import { useState } from 'react'
 
 export default function Attendance() {
-  const [attendance] = useState([
-    { id: 'EMP-001', employee: 'Alice Johnson', date: '2024-01-15', status: 'Present', time: '09:00 AM' },
-    { id: 'EMP-002', employee: 'Bob Williams', date: '2024-01-15', status: 'Present', time: '08:45 AM' },
-    { id: 'EMP-003', employee: 'Carol Smith', date: '2024-01-15', status: 'Absent', time: '-' },
-  ])
+  const [attendance] = useState<any[]>([])
 
   return (
     <div className="space-y-4">

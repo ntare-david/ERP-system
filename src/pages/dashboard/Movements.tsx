@@ -3,10 +3,7 @@ import { DataTable } from '../../components/DataTable'
 import { useState } from 'react'
 
 export default function StockMoves() {
-  const [moves] = useState([
-    { id: 'MOVE-001', item: 'Widget A', from: 'Warehouse A', to: 'Warehouse B', qty: 50, date: '2024-01-15' },
-    { id: 'MOVE-002', item: 'Widget B', from: 'Warehouse B', to: 'Store 1', qty: 25, date: '2024-01-16' },
-  ])
+  const [moves] = useState<any[]>([])
 
   return (
     <div className="space-y-4">

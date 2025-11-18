@@ -12,10 +12,9 @@ export default function Settings() {
             <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Multi-Company</h2>
           </div>
           <select className="input-field">
-            <option>Company 1</option>
-            <option>Company 2</option>
-            <option>Company 3</option>
+            <option>No companies available</option>
           </select>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">Add companies to see them here</p>
         </div>
 
         <div className="card">
@@ -25,8 +24,6 @@ export default function Settings() {
           </div>
           <select className="input-field">
             <option>English</option>
-            <option>Spanish</option>
-            <option>French</option>
           </select>
         </div>
 

@@ -3,10 +3,7 @@ import { DataTable } from '../../components/DataTable'
 import { useState } from 'react'
 
 export default function Pipeline() {
-  const [deals] = useState([
-    { id: 'DEAL-001', name: 'Tech Deal', amount: 50000, stage: 'Proposal', probability: '75%', date: '2024-01-15' },
-    { id: 'DEAL-002', name: 'Services Deal', amount: 30000, stage: 'Negotiation', probability: '50%', date: '2024-01-16' },
-  ])
+  const [deals] = useState<any[]>([])
 
   return (
     <div className="space-y-4">

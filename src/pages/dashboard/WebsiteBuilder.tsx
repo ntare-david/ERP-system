@@ -12,14 +12,10 @@ export default function WebsiteBuilder() {
             <h2 className="font-semibold text-slate-900 dark:text-white">Templates Gallery</h2>
           </div>
           <div className="space-y-2">
-            {['Landing Page', 'Product Showcase', 'Contact Form', 'Blog'].map((template) => (
-              <button
-                key={template}
-                className="w-full px-3 py-2 text-left text-sm rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-              >
-                {template}
-              </button>
-            ))}
+            <div className="text-center py-8 text-slate-500 dark:text-slate-400">
+              <p className="text-sm">No templates available</p>
+              <p className="text-xs mt-1">Templates will appear here when added</p>
+            </div>
           </div>
         </div>
 

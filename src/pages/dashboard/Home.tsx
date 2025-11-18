@@ -9,7 +9,6 @@ export default function DashboardHome() {
     totalInventory: 0,
     activeUsers: 0,
   })
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     loadStats()
@@ -38,8 +37,6 @@ export default function DashboardHome() {
         totalInventory: 0,
         activeUsers: 0,
       })
-    } finally {
-      setLoading(false)
     }
   }
 
@@ -55,7 +52,7 @@ export default function DashboardHome() {
           <div>
             <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Total Revenue</p>
             <p className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
-              {loading ? '...' : `$${stats.totalRevenue.toLocaleString()}`}
+              ${stats.totalRevenue.toLocaleString()}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">From paid invoices</p>
           </div>
@@ -66,7 +63,7 @@ export default function DashboardHome() {
           <div>
             <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Invoices</p>
             <p className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
-              {loading ? '...' : stats.totalOrders}
+              {stats.totalOrders}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Total invoices</p>
           </div>
@@ -77,7 +74,7 @@ export default function DashboardHome() {
           <div>
             <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Inventory</p>
             <p className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
-              {loading ? '...' : stats.totalInventory}
+              {stats.totalInventory}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Items in stock</p>
           </div>
@@ -88,7 +85,7 @@ export default function DashboardHome() {
           <div>
             <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Active Users</p>
             <p className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
-              {loading ? '...' : stats.activeUsers}
+              {stats.activeUsers}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">System users</p>
           </div>
@@ -99,14 +96,10 @@ export default function DashboardHome() {
       <div className="card">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Recent Activity</h2>
         <div className="space-y-3">
-          {loading ? (
-            <div className="text-center py-8 text-slate-500 dark:text-slate-400">Loading...</div>
-          ) : (
-            <div className="text-center py-8 text-slate-500 dark:text-slate-400">
-              <p className="text-lg font-medium">No recent activity</p>
-              <p className="text-sm mt-2">Activity will appear here as you use the system</p>
-            </div>
-          )}
+          <div className="text-center py-8 text-slate-500 dark:text-slate-400">
+            <p className="text-lg font-medium">No recent activity</p>
+            <p className="text-sm mt-2">Activity will appear here as you use the system</p>
+          </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@ import { accountingApi, Invoice, Payment } from '../../api/accounting'
 
 function Invoices() {
   const [invoices, setInvoices] = useState<Invoice[]>([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     loadInvoices()
@@ -20,23 +19,7 @@ function Invoices() {
     } catch (error) {
       console.error('Failed to load invoices:', error)
       setInvoices([])
-    } finally {
-      setLoading(false)
     }
-  }
-
-  if (loading) {
-    return (
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Invoices</h1>
-          <button className="btn-primary flex items-center gap-2">
-            <Plus size={18} /> New Invoice
-          </button>
-        </div>
-        <div className="text-center py-8 text-slate-500 dark:text-slate-400">Loading...</div>
-      </div>
-    )
   }
 
   return (
@@ -69,7 +52,6 @@ function Invoices() {
 
 function Payments() {
   const [payments, setPayments] = useState<Payment[]>([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     loadPayments()
@@ -82,23 +64,7 @@ function Payments() {
     } catch (error) {
       console.error('Failed to load payments:', error)
       setPayments([])
-    } finally {
-      setLoading(false)
     }
-  }
-
-  if (loading) {
-    return (
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Payments</h1>
-          <button className="btn-primary flex items-center gap-2">
-            <Plus size={18} /> Record Payment
-          </button>
-        </div>
-        <div className="text-center py-8 text-slate-500 dark:text-slate-400">Loading...</div>
-      </div>
-    )
   }
 
   return (

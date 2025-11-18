@@ -22,7 +22,6 @@ interface LedgerAccount {
 
 export default function Ledger() {
   const [ledgerData, setLedgerData] = useState<LedgerAccount[]>([])
-  const [loading, setLoading] = useState(true)
   const [selectedAccount, setSelectedAccount] = useState<string | null>(null)
 
   useEffect(() => {
@@ -39,18 +38,7 @@ export default function Ledger() {
     } catch (error) {
       console.error('Failed to load ledger:', error)
       setLedgerData([])
-    } finally {
-      setLoading(false)
     }
-  }
-
-  if (loading) {
-    return (
-      <div className="space-y-4">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">General Ledger</h1>
-        <div className="text-center py-8 text-slate-500 dark:text-slate-400">Loading...</div>
-      </div>
-    )
   }
 
   const selectedAccountData = ledgerData.find(acc => acc.account.id === selectedAccount)

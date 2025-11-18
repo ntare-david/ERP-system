@@ -3,10 +3,7 @@ import { DataTable } from '../../components/DataTable'
 import { useState } from 'react'
 
 export default function Opportunities() {
-  const [opportunities] = useState([
-    { id: 'OPP-001', title: 'Enterprise Sale', lead: 'John Smith', value: 100000, status: 'Qualified', date: '2024-01-15' },
-    { id: 'OPP-002', title: 'SMB Package', lead: 'Jane Doe', value: 25000, status: 'In Progress', date: '2024-01-16' },
-  ])
+  const [opportunities] = useState<any[]>([])
 
   return (
     <div className="space-y-4">
